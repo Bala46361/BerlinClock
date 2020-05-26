@@ -65,4 +65,12 @@ public class BerlinClockTest {
 		assertThat(berlinClock.convertHoursToSingleHoursRow(0).length(), CoreMatchers.is(4));
 	}
 
+	@Test
+	public void singleHoursRowFirstLampTurnsOnForHoursEndingWith1or6() {
+
+		assertThat(berlinClock.convertHoursToSingleHoursRow(21), CoreMatchers.is("ROOO"));
+		assertThat(berlinClock.convertHoursToSingleHoursRow(26), CoreMatchers.is("ROOO"));
+
+	}
+
 }
