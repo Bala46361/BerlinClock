@@ -38,7 +38,10 @@ public class BerlinClock {
 	}
 
 	public String convertMinutesToFiveMinutesRow(int minutes) {
-		return "OOOOOOOOOOO";
+		if (minutes >= 5 && minutes <= 9)
+			return "YOOOOOOOOOO";
+		else
+			return "OOOOOOOOOOO";
 	}
 
 }

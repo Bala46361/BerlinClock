@@ -98,9 +98,15 @@ public class BerlinClockTest {
 	}
 
 	@Test
-	public void testFiveMinutesRowContains11Lamps() {
+	public void fiveMinutesRowShouldContain11Lamps() {
 
 		assertThat(berlinClock.convertMinutesToFiveMinutesRow(0).length(), CoreMatchers.is(11));
+	}
+
+	@Test
+	public void firstYellowLampShouldTurnOnForMinutes5to9InFiveMinutesRow() {
+		
+		assertThat(berlinClock.convertMinutesToFiveMinutesRow(8), CoreMatchers.is("YOOOOOOOOOO"));
 	}
 
 }
