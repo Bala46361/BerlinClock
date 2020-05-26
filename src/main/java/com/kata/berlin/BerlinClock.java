@@ -4,7 +4,8 @@ public class BerlinClock {
 
 	private static final String O = "O";
 	private static final String R = "R";
-	private static final int TOTAL_LAMPS_IN_FIVE_HOURS_ROW = 4;
+	private static final int TOTAL_LAMPS_IN_HOURS_ROW = 4;
+
 	private static final int FIVE = 5;
 	private static final int ZERO = 0;
 	private static final int TWO = 2;
@@ -17,26 +18,23 @@ public class BerlinClock {
 
 	public String convertHoursToFiveHoursRow(int hours) {
 		int onLampsCount = hours / FIVE;
+		return convertToBerlinClockHours(onLampsCount);
+	}
+
+	public String convertHoursToSingleHoursRow(int hours) {
+		int onLampsCount = hours % FIVE;
+		return convertToBerlinClockHours(onLampsCount);
+
+	}
+
+	private String convertToBerlinClockHours(int onLampsCount) {
 		StringBuilder result = new StringBuilder();
-		for (int index = 0; index < TOTAL_LAMPS_IN_FIVE_HOURS_ROW; index++)
+		for (int index = 0; index < TOTAL_LAMPS_IN_HOURS_ROW; index++)
 			if (index < onLampsCount)
 				result.append(R);
 			else
 				result.append(O);
 		return result.toString();
-	}
-
-	public String convertHoursToSingleHoursRow(int hours) {
-		int onLampsCount = hours % 5;
-		String result = "";
-		for (int i = 0; i < 4; i++)
-			if (i < onLampsCount) {
-				result += "R";
-			} else {
-				result += "O";
-			}
-
-		return result;
 	}
 
 }
