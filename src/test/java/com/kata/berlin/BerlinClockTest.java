@@ -89,4 +89,12 @@ public class BerlinClockTest {
 
 	}
 
+	@Test
+	public void allLampsShouldTurnsOnForHoursEndingWith4or9InSingleHoursRow() {
+
+		assertThat(berlinClock.convertHoursToSingleHoursRow(24), CoreMatchers.is("RRRR"));
+		assertThat(berlinClock.convertHoursToSingleHoursRow(29), CoreMatchers.is("RRRR"));
+
+	}
+
 }
