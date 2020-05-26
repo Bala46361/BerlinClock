@@ -58,4 +58,11 @@ public class BerlinClockTest {
 
 		assertThat(berlinClock.convertHoursToFiveHoursRow(22), CoreMatchers.is("RRRR"));
 	}
+
+	@Test
+	public void singleHoursRowShouldContain4Lamps() {
+
+		assertThat(berlinClock.convertHoursToSingleHoursRow(0).length(), CoreMatchers.is(4));
+	}
+
 }

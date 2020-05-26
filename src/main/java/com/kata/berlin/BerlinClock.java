@@ -26,4 +26,8 @@ public class BerlinClock {
 		return result.toString();
 	}
 
+	public String convertHoursToSingleHoursRow(int hours) {
+		return "OOOO";
+	}
+
 }
