@@ -12,10 +12,7 @@ public class BerlinClock {
 	}
 
 	public String convertHoursToFiveHoursRow(int hours) {
-		if (hours >= 5 && hours <= 9)
-			return "ROOO";
-		else
-			return "OOOO";
+		return (hours >= 5 && hours <= 9) ? "ROOO" : "OOOO";
 	}
 
 }
