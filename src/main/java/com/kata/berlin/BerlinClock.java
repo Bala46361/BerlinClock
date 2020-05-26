@@ -27,17 +27,16 @@ public class BerlinClock {
 	}
 
 	public String convertHoursToSingleHoursRow(int hours) {
-		if (hours % 5 == 4) {
-			return "RRRR";
-		} else if (hours % 5 == 3) {
-			return "RRRO";
-		} else if (hours % 5 == 2) {
-			return "RROO";
-		} else if (hours % 5 == 1) {
-			return "ROOO";
-		} else {
-			return "OOOO";
-		}
+		int onLampsCount = hours % 5;
+		String result = "";
+		for (int i = 0; i < 4; i++)
+			if (i < onLampsCount) {
+				result += "R";
+			} else {
+				result += "O";
+			}
+
+		return result;
 	}
 
 }
