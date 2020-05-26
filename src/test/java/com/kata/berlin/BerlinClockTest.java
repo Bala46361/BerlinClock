@@ -81,4 +81,12 @@ public class BerlinClockTest {
 
 	}
 
+	@Test
+	public void firstThreeLampsShouldTurnsOnForHoursEndingWith3or8InSingleHoursRow() {
+
+		assertThat(berlinClock.convertHoursToSingleHoursRow(23), CoreMatchers.is("RRRO"));
+		assertThat(berlinClock.convertHoursToSingleHoursRow(28), CoreMatchers.is("RRRO"));
+
+	}
+
 }
