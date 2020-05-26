@@ -52,4 +52,10 @@ public class BerlinClockTest {
 
 		assertThat(berlinClock.convertHoursToFiveHoursRow(16), CoreMatchers.is("RRRO"));
 	}
+
+	@Test
+	public void firstThreeLampsShouldGlowRedForHours20to24() {
+
+		assertThat(berlinClock.convertHoursToFiveHoursRow(22), CoreMatchers.is("RRRR"));
+	}
 }
