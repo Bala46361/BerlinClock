@@ -26,4 +26,17 @@ public class BerlinClockTest {
 		assertThat(berlinClock.getSeconds(21), CoreMatchers.is("O"));
 	}
 
+	@Test
+	public void fiveHoursRowShouldContain4Lamps() {
+
+		assertThat(berlinClock.convertHoursToFiveHoursRow(0).length(), CoreMatchers.is(4));
+
+	}
+
+	@Test
+	public void firstLightShouldGlowRedForHours5To9() {
+		
+		assertThat(berlinClock.convertHoursToFiveHoursRow(7), CoreMatchers.is("ROOO"));
+
+	}
 }
