@@ -37,4 +37,8 @@ public class BerlinClock {
 		return result.toString();
 	}
 
+	public String convertMinutesToFiveMinutesRow(int minutes) {
+		return "OOOOOOOOOOO";
+	}
+
 }

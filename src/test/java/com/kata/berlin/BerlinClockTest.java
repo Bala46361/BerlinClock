@@ -97,4 +97,10 @@ public class BerlinClockTest {
 
 	}
 
+	@Test
+	public void testFiveMinutesRowContains11Lamps() {
+
+		assertThat(berlinClock.convertMinutesToFiveMinutesRow(0).length(), CoreMatchers.is(11));
+	}
+
 }
