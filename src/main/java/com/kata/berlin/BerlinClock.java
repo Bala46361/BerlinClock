@@ -12,17 +12,14 @@ public class BerlinClock {
 	}
 
 	public String convertHoursToFiveHoursRow(int hours) {
-		if (hours >= 20 && hours <= 24) {
-			return "RRRR";
-		} else if (hours >= 15 && hours <= 19) {
-			return "RRRO";
-		} else if (hours >= 10 && hours <= 14) {
-			return "RROO";
-		} else if (hours >= 5 && hours <= 9) {
-			return "ROOO";
-		} else {
-			return "OOOO";
-		}
+		int onLampsCount = hours / 5;
+		String result = "";
+		for (int i = 0; i < 4; i++)
+			if (i < onLampsCount)
+				result += "R";
+			else
+				result += "O";
+		return result;
 	}
 
 }
